@@ -9,6 +9,7 @@ import { addUser } from "../utils/userSlice";
 const Login = () => {
     const [emailId, setEmailId] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -29,9 +30,8 @@ const Login = () => {
 
             dispatch(addUser(user.user));
             navigate("/");
-            console.log(user);
         } catch (error) {
-            console.log(error)
+            setError(error?.response?.data);
         }
     }
 
@@ -60,6 +60,7 @@ const Login = () => {
                             onChange={e => setPassword(e.target.value)}
                         />
                     </div>
+                    <p className="text-red-500 justify-center">{error}</p>
                     <div className="card-actions justify-center my-2">
                         <button
                             className="btn btn-primary"

@@ -7,7 +7,7 @@ import './index.css'
 import App from './components/App.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <StrictMode> 
     <Provider store={AppStore}>
       <App />
     </Provider>
