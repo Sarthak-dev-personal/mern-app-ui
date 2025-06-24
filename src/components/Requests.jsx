@@ -37,7 +37,7 @@ const Requests = () => {
                 dispatch(addRequests([]));
             }
         } catch (error) {
-            console.error(error.data);
+            console.error(error.response.data);
         }
     };
 
@@ -60,7 +60,7 @@ const Requests = () => {
                 }, 3000,
             );
         } catch (error) {
-            console.error(error.data);
+            console.error(error.response.data);
         }
     };
 
