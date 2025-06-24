@@ -7,13 +7,13 @@ import { addUser } from "../utils/userSlice";
 import { BASE_URL } from "../contants";
 
 const EditProfile = ({user}) => {
-    const [firstName, setFirstName] = useState(user.firstName);
-    const [lastName, setLastName] = useState(user.lastName);
-    const [age, setAge] = useState(user.age);
-    const [skills, setSkills] = useState([...user.skills]);
-    const [photoUrl, setPhotoUrl] = useState(user.photoUrl);
-    const [gender, setGender] = useState(user.gender);
-    const [about, setAbout] = useState(user.about);
+    const [firstName, setFirstName] = useState(user.firstName ?? "");
+    const [lastName, setLastName] = useState(user.lastName ?? "");
+    const [age, setAge] = useState(user.age ?? "");
+    const [skills, setSkills] = useState(user.skills || []);
+    const [photoUrl, setPhotoUrl] = useState(user.photoUrl ?? "");
+    const [gender, setGender] = useState(user.gender ?? "male");
+    const [about, setAbout] = useState(user.about ?? "");
     const [error, setError] = useState("");
     const [showToastMessage, setShowToasMessage] = useState(false);
     const [toastMessage, setToastMessage] = useState("");
