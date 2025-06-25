@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 
 import Body from "./Body";
-import Login from "./login";
+import Login from "./Login";
 import Profile from "./Profile";
 import Feed from "./Feed";
 import Connections from "./Connections";
